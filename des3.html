@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+        }
+        .container {
+            padding: 1em;
+        }
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Video Player</h1>
+    </header>
+    <div class="container">
+        <video id="videoPlayer" controls>
+            <source src="https://raw.githubusercontent.com/yourusername/yourrepository/main/videos/example.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="button-container">
+            <button class="button" onclick="playVideo()">Play</button>
+            <button class="button" onclick="stopVideo()">Stop</button>
+        </div>
+        <a class="back-link" href="index.html">Back to Home</a>
+    </div>
+    <script>
+        function playVideo() {
+            var video = document.getElementById('videoPlayer');
+            video.play();
+        }
+
+        function stopVideo() {
+            var video = document.getElementById('videoPlayer');
+            video.pause();
+            video.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
